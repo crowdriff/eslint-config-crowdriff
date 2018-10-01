@@ -35,7 +35,7 @@ module.exports = {
     'class-methods-use-this': 0, // Not super useful in React
     'consistent-return': 0, // possible confusion when returns might be of done function
     'no-useless-constructor': 0,
-
+    'react/destructuring-assignment': 0,
     'import/no-named-as-default': 0, // not how we do connected components
     'import/prefer-default-export': 0, // Doesn"t work with ducks
     'import/newline-after-import': 0, // bad for ducks
@@ -46,6 +46,7 @@ module.exports = {
     'react/require-default-props': 0, // Not for prototypin
     'react/no-danger': 0, // LIVE DANGEROUSLY
     'jsx-a11y/anchor-is-valid': 0, // Doesn"t work with Link
+    'react/jsx-no-target-blank': 0,
     'react/no-array-index-key': 0,
     'react/forbid-prop-types': 0,
     'no-confusing-arrow': 0, // Needed for styled components
