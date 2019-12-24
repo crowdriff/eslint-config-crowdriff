@@ -1,7 +1,5 @@
-const node = require('./node');
-const react = require('./react');
+const core = require('./core.js');
 
 module.exports = {
-  node,
-  react,
+  core,
 };
