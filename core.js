@@ -15,9 +15,6 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
 
     // Enable prettier integration.
-    'prettier',
-    'prettier/@typescript-eslint',
-    'prettier/react',
     'plugin:prettier/recommended',
   ],
   overrides: [
@@ -44,14 +41,38 @@ module.exports = {
     },
     ecmaVersion: 6,
     sourceType: 'module',
+    project: ['./tsconfig.json'],
   },
   plugins: ['@typescript-eslint', 'prettier'],
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-inferrable-types': 0,
     '@typescript-eslint/no-use-before-define': 2,
+    // Made this a warning so that its encouraged but not enforced.
+    '@typescript-eslint/naming-convention': [
+      'warn',
+      {
+        selector: 'default',
+        format: ['camelCase'],
+        leadingUnderscore: 'allow',
+        trailingUnderscore: 'allow',
+      },
+      {
+        selector: 'variable',
+        format: ['camelCase', 'UPPER_CASE'],
+        leadingUnderscore: 'allow',
+        trailingUnderscore: 'allow',
+      },
+      {
+        selector: 'typeLike',
+        format: ['PascalCase'],
+      },
+    ],
     curly: ['error', 'multi-line'],
     'import/prefer-default-export': 0,
+    // suppress no-shadow false positives
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': 'warn',
     'prettier/prettier': [
       'error',
       {
